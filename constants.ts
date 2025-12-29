@@ -17,14 +17,14 @@ export const OVERALL_INFOGRAPHICS: InfographicData[] = [
     id: 'ov-pass-excellence',
     title: 'Pass Rate vs. Excellence',
     imageUrl: 'https://github.com/krit22/Resources-for-analysis-website/blob/main/images/general/Code_Generated_Image.png?raw=true',
-    description: 'Section G: High Pass Rate & Most Toppers (>30)',
+    description: 'Section G: Lowest Pass Rate. Most Toppers.',
     tags: ['Pass Rate', 'Excellence', 'Trend', 'Dual-Axis'],
   },
   {
     id: 'ov-consistency-spread',
     title: 'Grade Consistency & Spread',
     imageUrl: 'https://github.com/krit22/Resources-for-analysis-website/blob/main/images/general/Code_Generated_Image%20(4).png?raw=true',
-    description: 'Section G: Consistent High Scores. Section C: Notable Outliers.',
+    description: '',
     tags: ['Box Plot', 'Consistency', 'Spread', 'Distribution'],
   },
   {

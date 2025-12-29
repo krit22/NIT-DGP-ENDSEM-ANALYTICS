@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BarChart3, PieChart, LayoutGrid, Menu, X, Home } from 'lucide-react';
 
@@ -9,6 +9,11 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Automatically scroll to top whenever the route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Simple nav for utility, but emphasis is on the page flow now
   const navItems = [

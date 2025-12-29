@@ -84,18 +84,20 @@ const InfographicCard: React.FC<Props> = ({ data, fullWidth = false }) => {
                   {data.title}
               </h3>
 
-              <div className="flex gap-3 md:gap-5 items-start mt-2 md:mt-0">
-                  <div className="flex-shrink-0 mt-1 p-1.5 md:p-2 bg-blue-50 rounded-full ring-2 md:ring-4 ring-blue-50/50">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-blue-600 fill-blue-600" />
-                  </div>
-                  <div>
-                      <span className="block md:hidden text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">Insight</span>
-                      <span className="hidden md:block text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Key Insight</span>
-                      <p className="text-base md:text-2xl leading-relaxed md:leading-relaxed">
-                          {highlightText(data.description)}
-                      </p>
-                  </div>
-              </div>
+              {data.description && (
+                <div className="flex gap-3 md:gap-5 items-start mt-2 md:mt-0">
+                    <div className="flex-shrink-0 mt-1 p-1.5 md:p-2 bg-blue-50 rounded-full ring-2 md:ring-4 ring-blue-50/50">
+                        <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-blue-600 fill-blue-600" />
+                    </div>
+                    <div>
+                        <span className="block md:hidden text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">Insight</span>
+                        <span className="hidden md:block text-xs font-bold text-blue-600 uppercase tracking-widest mb-2">Key Insight</span>
+                        <p className="text-base md:text-2xl leading-relaxed md:leading-relaxed">
+                            {highlightText(data.description)}
+                        </p>
+                    </div>
+                </div>
+              )}
           </div>
         </div>
       </div>
