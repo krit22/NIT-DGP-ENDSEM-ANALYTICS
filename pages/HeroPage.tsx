@@ -29,7 +29,7 @@ const HeroPage: React.FC = () => {
       {/* Hall Of Fame Section */}
       <HallOfFame />
 
-      {/* Quick Stats Dashboard (Mock Data) */}
+      {/* Quick Stats Dashboard */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
           <div className="p-3 bg-green-100 text-green-600 rounded-lg">
@@ -37,8 +37,8 @@ const HeroPage: React.FC = () => {
           </div>
           <div>
             <p className="text-sm font-medium text-slate-500">Total Students</p>
-            <h3 className="text-2xl font-bold text-slate-800">480</h3>
-            <p className="text-xs text-green-600 font-medium">+12 from last year</p>
+            <h3 className="text-2xl font-bold text-slate-800">884</h3>
+            <p className="text-xs text-green-600 font-medium">Active Enrollment</p>
           </div>
         </div>
 
@@ -47,8 +47,8 @@ const HeroPage: React.FC = () => {
             <TrendingUp className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm font-medium text-slate-500">Average GPA</p>
-            <h3 className="text-2xl font-bold text-slate-800">3.42</h3>
+            <p className="text-sm font-medium text-slate-500">Batch Avg SGPA</p>
+            <h3 className="text-2xl font-bold text-slate-800">8.16</h3>
             <p className="text-xs text-slate-400">Across 8 sections</p>
           </div>
         </div>
@@ -58,9 +58,9 @@ const HeroPage: React.FC = () => {
             <GraduationCap className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-sm font-medium text-slate-500">Top Performer</p>
-            <h3 className="text-2xl font-bold text-slate-800">4.00</h3>
-            <p className="text-xs text-purple-600">Section B & Section G</p>
+            <p className="text-sm font-medium text-slate-500">Top Performer Score</p>
+            <h3 className="text-2xl font-bold text-slate-800">9.78</h3>
+            <p className="text-xs text-purple-600">Sections B, E, and G</p>
           </div>
         </div>
 
@@ -71,7 +71,7 @@ const HeroPage: React.FC = () => {
           <div>
             <p className="text-sm font-medium text-slate-500">Needs Attention</p>
             <h3 className="text-2xl font-bold text-slate-800">Section D</h3>
-            <p className="text-xs text-amber-600">Lowest median GPA</p>
+            <p className="text-xs text-amber-600">Lowest Avg SGPA: 7.90</p>
           </div>
         </div>
       </div>
