@@ -91,7 +91,7 @@ const SectionAnalysisPage: React.FC = () => {
              
              <div className="flex items-center gap-2 mb-6 relative z-10">
                 <div className="p-2 bg-amber-500/20 rounded-lg"><Medal className="w-5 h-5 text-amber-400" /></div>
-                <h3 className="font-bold text-white text-lg">Hall of Fame</h3>
+                <h3 className="font-bold text-white text-lg">Hall of Fame • Sec {sectionKey}</h3>
             </div>
 
             <div className="space-y-4 relative z-10 flex-1 overflow-y-auto pr-2 custom-scrollbar min-h-[300px] md:max-h-[350px]">
