@@ -4,7 +4,8 @@ import { Section } from '../types';
 import { SECTION_DATA } from '../constants';
 import SectionSelector from '../components/SectionSelector';
 import StoryFooter from '../components/StoryFooter';
-import { Users, Award, TrendingUp, AlertTriangle, Activity, Zap, Medal } from 'lucide-react';
+import GradePieChart from '../components/dashboard/GradePieChart';
+import { Users, Award, AlertTriangle, Activity, Zap, Medal } from 'lucide-react';
 
 const SectionAnalysisPage: React.FC = () => {
   const { sectionId } = useParams<{ sectionId: string }>();
@@ -14,10 +15,6 @@ const SectionAnalysisPage: React.FC = () => {
   if (!data) {
     return <Navigate to="/sections/A" replace />;
   }
-
-  // Helper for sorting grade density
-  const densityOrder = ['<6', '6-7', '7-8', '8-9', '9-10'];
-  const maxDensity = Math.max(...Object.values(data.grade_density));
 
   // Helper for sorting branch battle
   const sortedBranches = Object.entries(data.branch_battle)
@@ -88,7 +85,7 @@ const SectionAnalysisPage: React.FC = () => {
       {/* 3. Main Bento Grid */}
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-6">
         
-        {/* Widget: Hall of Fame - Moved to Top Left - Span 4 */}
+        {/* Widget: Hall of Fame - Top Left - Span 4 */}
         <div className="md:col-span-4 bg-slate-900 text-white rounded-3xl p-6 md:p-8 shadow-xl relative overflow-hidden flex flex-col h-full">
              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
              
@@ -115,37 +112,9 @@ const SectionAnalysisPage: React.FC = () => {
             </div>
         </div>
 
-        {/* Widget: Grade Distribution - Top Right - Span 8 */}
-        <div className="md:col-span-8 bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 flex flex-col justify-center">
-            <div className="flex items-center gap-2 mb-8">
-                <div className="p-2 bg-blue-50 rounded-lg"><TrendingUp className="w-5 h-5 text-blue-600" /></div>
-                <h3 className="font-bold text-slate-900 text-lg">Grade Density</h3>
-            </div>
-            
-            <div className="flex items-end justify-between h-48 md:h-64 gap-2 md:gap-4">
-                {densityOrder.map((range) => {
-                    const count = data.grade_density[range] || 0;
-                    const heightPercent = (count / maxDensity) * 100;
-                    
-                    return (
-                        <div key={range} className="flex-1 flex flex-col items-center group">
-                            <div className="relative w-full bg-slate-50 rounded-t-xl overflow-hidden flex items-end h-full">
-                                <div 
-                                    className="w-full bg-blue-500/90 group-hover:bg-blue-600 transition-all duration-500 rounded-t-xl relative min-h-[4px]"
-                                    style={{ height: `${heightPercent}%` }}
-                                >
-                                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                                        {count}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mt-3 text-xs md:text-sm font-bold text-slate-400 group-hover:text-blue-600 transition-colors">
-                                {range}
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
+        {/* Widget: Grade Distribution Pie Chart - Top Right - Span 8 */}
+        <div className="md:col-span-8">
+            <GradePieChart data={data.grade_density} />
         </div>
         
         {/* Widget: Performance Radar (Indices) - Bottom Left (Under Hall of Fame) - Span 4 */}

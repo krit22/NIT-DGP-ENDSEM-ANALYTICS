@@ -64,15 +64,40 @@ export const SECTION_METRICS_DATA: Record<string, SectionMetricData> = {
   }
 };
 
-export const GROUP_COMPARISON_INFOGRAPHICS: InfographicData[] = [
-  {
-    id: 'gc-1',
-    title: 'SGPA Distribution: Group 1 vs Group 2',
-    imageUrl: 'https://github.com/krit22/Resources-for-analysis-website/blob/main/images/general/Code_Generated_Image%20(1).png?raw=true',
-    description: 'Group 2: Higher Median. Group 1: More Compact.',
-    tags: ['Comparison', 'Box Plot', 'Variance']
+export const GROUP_METRICS = {
+  group1: {
+    id: "Group 1",
+    label: "Sections A-D",
+    color: "blue",
+    avg: 8.011,
+    median: 8.11,
+    passRate: 89.55,
+    toppers9: 65,
+    toppers95: 5,
+    min: 5.75,
+    max: 9.78,
+    stdDev: 0.874,
+    toughest: "XEC01",
+    supple: 35
+  },
+  group2: {
+    id: "Group 2",
+    label: "Sections E-H",
+    color: "indigo",
+    avg: 8.311,
+    median: 8.33,
+    passRate: 88.74,
+    toppers9: 93,
+    toppers95: 14,
+    min: 6.0,
+    max: 9.78,
+    stdDev: 0.700,
+    toughest: "XEC01",
+    supple: 30
   }
-];
+};
+
+export const GROUP_COMPARISON_INFOGRAPHICS: InfographicData[] = [];
 
 export const GROUP_ONE_INFOGRAPHICS: InfographicData[] = [];
 
@@ -88,7 +113,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-EC": 8.5, "B.Tech-MC": 8.43, "B.Tech-CS": 8.34, "B.Tech-EE": 8.31, "B.Tech-CE": 7.63, "B.Tech-MM": 7.58, "B.Tech-ME": 7.5, "B.Tech-CH": 7.44, "B.Tech-BT": 7.35},
     "local_hurdles": {"XEC02": 10, "XEC01": 9, "ESC01": 4},
     "radar_scores": {"Elite_Index": 13.9, "Stability_Index": 88.0, "Uniformity": 88.6, "Resilience": 91.7},
-    "grade_density": {"<6": 0, "6-7": 22, "7-8": 30, "8-9": 46, "9-10": 10}
+    "grade_density": {"<6": 0, "6-7": 21, "7-8": 27, "8-9": 45, "9-10": 15}
   },
   "B": {
     "summary": {"average_sgpa": 8.0, "strength": 106, "tag": "Growing"},
@@ -96,7 +121,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-MC": 8.37, "B.Tech-CS": 8.32, "B.Tech-CH": 8.25, "B.Tech-EC": 8.22, "B.Tech-CE": 8.14, "DD-CH": 7.89, "INT-MSC-CY": 7.89, "B.Tech-EE": 7.82, "B.Tech-ME": 7.75, "B.Tech-MM": 7.62, "B.Tech-BT": 7.39, "DD-BT": 7.22},
     "local_hurdles": {"XEC01": 11, "XEC02": 4, "MAC01": 4},
     "radar_scores": {"Elite_Index": 12.3, "Stability_Index": 85.8, "Uniformity": 89.4, "Resilience": 89.6},
-    "grade_density": {"<6": 1, "6-7": 14, "7-8": 38, "8-9": 42, "9-10": 11}
+    "grade_density": {"<6": 1, "6-7": 11, "7-8": 39, "8-9": 42, "9-10": 13}
   },
   "C": {
     "summary": {"average_sgpa": 8.22, "strength": 113, "tag": "High Performer"},
@@ -104,7 +129,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-BT": 8.48, "B.Tech-EE": 8.42, "B.Tech-MC": 8.41, "B.Tech-CS": 8.4, "B.Tech-CH": 8.21, "B.Tech-EC": 8.13, "B.Tech-MM": 8.06, "B.Tech-CE": 8.04, "DD-CH": 8.0, "B.Tech-ME": 7.93, "INT-MSC-CY": 7.39},
     "local_hurdles": {"XEC01": 5, "XEC02": 2, "MAC01": 2},
     "radar_scores": {"Elite_Index": 22.1, "Stability_Index": 93.8, "Uniformity": 89.3, "Resilience": 95.6},
-    "grade_density": {"<6": 1, "6-7": 14, "7-8": 25, "8-9": 54, "9-10": 18}
+    "grade_density": {"<6": 1, "6-7": 12, "7-8": 23, "8-9": 51, "9-10": 25}
   },
   "D": {
     "summary": {"average_sgpa": 7.9, "strength": 113, "tag": "Consistent"},
@@ -112,7 +137,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-EC": 8.58, "B.Tech-EE": 8.24, "B.Tech-CH": 8.03, "B.Tech-CS": 8.01, "B.Tech-MC": 8.0, "B.Tech-BT": 7.76, "B.Tech-ME": 7.76, "B.Tech-CE": 7.62, "B.Tech-MM": 7.47, "INT-MSC-CY": 6.78, "DD-BT": 6.75},
     "local_hurdles": {"XEC01": 10, "MAC01": 7, "CSC01": 3},
     "radar_scores": {"Elite_Index": 10.6, "Stability_Index": 90.3, "Uniformity": 89.4, "Resilience": 91.2},
-    "grade_density": {"<6": 1, "6-7": 25, "7-8": 32, "8-9": 46, "9-10": 9}
+    "grade_density": {"<6": 0, "6-7": 22, "7-8": 29, "8-9": 50, "9-10": 12}
   },
   "E": {
     "summary": {"average_sgpa": 8.27, "strength": 112, "tag": "High Performer"},
@@ -120,7 +145,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-EC": 8.73, "B.Tech-CS": 8.52, "INT-MSC-CY": 8.5, "B.Tech-CE": 8.33, "B.Tech-EE": 8.32, "B.Tech-MC": 8.32, "B.Tech-BT": 8.21, "B.Tech-ME": 8.09, "B.Tech-MM": 8.03, "B.Tech-CH": 7.89, "DD-BT": 7.6},
     "local_hurdles": {"XEC01": 8, "PHC01": 3, "MAC01": 1},
     "radar_scores": {"Elite_Index": 19.6, "Stability_Index": 92.0, "Uniformity": 91.2, "Resilience": 92.9},
-    "grade_density": {"<6": 1, "6-7": 3, "7-8": 36, "8-9": 59, "9-10": 13}
+    "grade_density": {"<6": 0, "6-7": 2, "7-8": 33, "8-9": 55, "9-10": 22}
   },
   "F": {
     "summary": {"average_sgpa": 8.27, "strength": 114, "tag": "High Performer"},
@@ -128,7 +153,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-CS": 8.57, "B.Tech-MC": 8.46, "DD-CH": 8.44, "B.Tech-ME": 8.41, "B.Tech-EE": 8.38, "B.Tech-MM": 8.26, "B.Tech-BT": 8.04, "B.Tech-CH": 8.03, "B.Tech-EC": 8.02, "B.Tech-CE": 8.0, "INT-MSC-CY": 7.48},
     "local_hurdles": {"PHC01": 12, "MAC01": 3, "XEC01": 3},
     "radar_scores": {"Elite_Index": 17.5, "Stability_Index": 88.6, "Uniformity": 92.0, "Resilience": 97.4},
-    "grade_density": {"<6": 0, "6-7": 4, "7-8": 40, "8-9": 56, "9-10": 14}
+    "grade_density": {"<6": 0, "6-7": 4, "7-8": 35, "8-9": 55, "9-10": 20}
   },
   "G": {
     "summary": {"average_sgpa": 8.44, "strength": 111, "tag": "High Performer"},
@@ -136,7 +161,7 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-ME": 8.83, "B.Tech-CS": 8.77, "B.Tech-EC": 8.52, "B.Tech-CE": 8.42, "DD-BT": 8.33, "B.Tech-MC": 8.32, "B.Tech-CH": 8.28, "B.Tech-MM": 8.25, "B.Tech-EE": 8.22, "DD-CH": 8.22, "B.Tech-BT": 7.99, "INT-MSC-CY": 7.85},
     "local_hurdles": {"XEC01": 19, "PHC01": 5, "MAC01": 5},
     "radar_scores": {"Elite_Index": 27.9, "Stability_Index": 82.0, "Uniformity": 91.9, "Resilience": 82.9},
-    "grade_density": {"<6": 0, "6-7": 1, "7-8": 36, "8-9": 49, "9-10": 25}
+    "grade_density": {"<6": 0, "6-7": 0, "7-8": 28, "8-9": 52, "9-10": 31}
   },
   "H": {
     "summary": {"average_sgpa": 8.26, "strength": 107, "tag": "High Performer"},
@@ -144,6 +169,6 @@ export const SECTION_DATA: Record<Section, SectionData> = {
     "branch_battle": {"B.Tech-CS": 8.69, "B.Tech-EE": 8.66, "B.Tech-EC": 8.49, "B.Tech-MC": 8.48, "B.Tech-MM": 8.44, "B.Tech-CH": 8.3, "B.Tech-ME": 7.98, "B.Tech-CE": 7.96, "B.Tech-BT": 7.78, "DD-BT": 7.56},
     "local_hurdles": {"PHC01": 5, "CSC01": 2, "MAC01": 2},
     "radar_scores": {"Elite_Index": 18.7, "Stability_Index": 92.5, "Uniformity": 91.3, "Resilience": 100.0},
-    "grade_density": {"<6": 0, "6-7": 7, "7-8": 31, "8-9": 52, "9-10": 17}
+    "grade_density": {"<6": 0, "6-7": 4, "7-8": 32, "8-9": 51, "9-10": 20}
   }
 };

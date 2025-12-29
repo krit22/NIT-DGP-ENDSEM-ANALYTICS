@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { GROUP_COMPARISON_INFOGRAPHICS } from '../constants';
-import InfographicCard from '../components/InfographicCard';
+import GroupBattleCard from '../components/dashboard/GroupBattleCard';
+import GroupExcellenceWidget from '../components/dashboard/GroupExcellenceWidget';
+import GroupConsistencyWidget from '../components/dashboard/GroupConsistencyWidget';
 import StoryFooter from '../components/StoryFooter';
 import { ArrowDown, Users, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -24,16 +25,23 @@ const GroupAnalysisPage: React.FC = () => {
         </p>
       </div>
 
-      <div className="space-y-12">
-        <div className="grid grid-cols-1 gap-12">
-            {GROUP_COMPARISON_INFOGRAPHICS.map((item) => (
-                <InfographicCard key={item.id} data={item} fullWidth />
-            ))}
-        </div>
+      {/* Main Dashboard Grid */}
+      <div className="max-w-6xl mx-auto px-4 space-y-8 mb-16">
+          
+          {/* Row 1: The Head to Head Battle */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <GroupBattleCard />
+              <GroupExcellenceWidget />
+          </div>
+
+          {/* Row 2: Consistency */}
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+             <GroupConsistencyWidget />
+          </div>
       </div>
 
       {/* Narrative Interlude */}
-      <div className="py-16 text-center space-y-4 px-4">
+      <div className="py-8 text-center space-y-4 px-4">
           <h3 className="text-2xl font-bold text-slate-900">Go Deeper</h3>
           <p className="text-slate-500 text-base max-w-md mx-auto">
               Explore specific section data.
