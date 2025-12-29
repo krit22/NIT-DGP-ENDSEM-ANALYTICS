@@ -1,8 +1,9 @@
 import React from 'react';
-import { OVERALL_INFOGRAPHICS } from '../constants';
-import InfographicCard from '../components/InfographicCard';
 import StoryFooter from '../components/StoryFooter';
 import ToughestSubjects from '../components/ToughestSubjects';
+import AvgSgpaChart from '../components/dashboard/AvgSgpaChart';
+import PassRateChart from '../components/dashboard/PassRateChart';
+import ConsistencyChart from '../components/dashboard/ConsistencyChart';
 
 const OverallAnalysisPage: React.FC = () => {
   return (
@@ -16,13 +17,23 @@ const OverallAnalysisPage: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 md:gap-24 mb-16">
-        {OVERALL_INFOGRAPHICS.map((item, index) => (
-          <InfographicCard key={item.id} data={item} fullWidth={index === 0} />
-        ))}
+      {/* Interactive Dashboard Grid */}
+      <div className="space-y-12 md:space-y-16 mb-16 max-w-7xl mx-auto">
+        
+        {/* Card 1: Average SGPA */}
+        <AvgSgpaChart />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Card 2: Pass Rate & Excellence */}
+            <PassRateChart />
+            
+            {/* Card 3: Consistency & Spread */}
+            <ConsistencyChart />
+        </div>
+
       </div>
 
-      {/* New Section: Toughest Subjects */}
+      {/* Section: Toughest Subjects */}
       <ToughestSubjects />
 
       {/* Narrative Bridge */}

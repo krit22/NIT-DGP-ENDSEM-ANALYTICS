@@ -52,6 +52,20 @@ export interface SectionData {
   infographics?: InfographicData[]; // Optional/Deprecated
 }
 
+export interface SectionMetricData {
+  metrics: {
+    average_sgpa: number;
+    median_sgpa: number;
+    max_sgpa: number;
+    min_sgpa: number;
+  };
+  performance: {
+    pass_percentage: number;
+    toppers_9_plus_count: number;
+    total_students: number;
+  };
+}
+
 export interface GroupData {
   name: Group;
   sections: Section[];

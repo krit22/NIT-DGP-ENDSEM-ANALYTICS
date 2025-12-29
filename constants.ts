@@ -1,10 +1,11 @@
-import { InfographicData, Section, SectionData } from './types';
+import { InfographicData, Section, SectionData, SectionMetricData } from './types';
 
 // ============================================================================
 // DATA ENTRY AREA
 // ============================================================================
 
 export const OVERALL_INFOGRAPHICS: InfographicData[] = [
+  // Deprecated for OverallAnalysisPage, keeping for reference if needed
   {
     id: 'ov-sgpa-avg',
     title: 'Average SGPA by Section',
@@ -27,6 +28,41 @@ export const OVERALL_INFOGRAPHICS: InfographicData[] = [
     tags: ['Box Plot', 'Consistency', 'Spread', 'Distribution'],
   }
 ];
+
+export const SECTION_METRICS_DATA: Record<string, SectionMetricData> = {
+  "A": {
+    "metrics": { "average_sgpa": 7.931, "median_sgpa": 8.11, "max_sgpa": 9.44, "min_sgpa": 6.25 },
+    "performance": { "pass_percentage": 87.96, "toppers_9_plus_count": 15, "total_students": 108 }
+  },
+  "B": {
+    "metrics": { "average_sgpa": 7.999, "median_sgpa": 8.055, "max_sgpa": 9.78, "min_sgpa": 5.86 },
+    "performance": { "pass_percentage": 85.85, "toppers_9_plus_count": 13, "total_students": 106 }
+  },
+  "C": {
+    "metrics": { "average_sgpa": 8.216, "median_sgpa": 8.44, "max_sgpa": 9.56, "min_sgpa": 5.75 },
+    "performance": { "pass_percentage": 93.81, "toppers_9_plus_count": 25, "total_students": 113 }
+  },
+  "D": {
+    "metrics": { "average_sgpa": 7.896, "median_sgpa": 8.0, "max_sgpa": 9.67, "min_sgpa": 6.0 },
+    "performance": { "pass_percentage": 90.27, "toppers_9_plus_count": 12, "total_students": 113 }
+  },
+  "E": {
+    "metrics": { "average_sgpa": 8.275, "median_sgpa": 8.22, "max_sgpa": 9.78, "min_sgpa": 6.0 },
+    "performance": { "pass_percentage": 91.96, "toppers_9_plus_count": 22, "total_students": 112 }
+  },
+  "F": {
+    "metrics": { "average_sgpa": 8.265, "median_sgpa": 8.33, "max_sgpa": 9.67, "min_sgpa": 6.63 },
+    "performance": { "pass_percentage": 88.6, "toppers_9_plus_count": 20, "total_students": 114 }
+  },
+  "G": {
+    "metrics": { "average_sgpa": 8.442, "median_sgpa": 8.33, "max_sgpa": 9.78, "min_sgpa": 7.0 },
+    "performance": { "pass_percentage": 81.98, "toppers_9_plus_count": 31, "total_students": 111 }
+  },
+  "H": {
+    "metrics": { "average_sgpa": 8.261, "median_sgpa": 8.33, "max_sgpa": 9.56, "min_sgpa": 6.56 },
+    "performance": { "pass_percentage": 92.52, "toppers_9_plus_count": 20, "total_students": 107 }
+  }
+};
 
 export const GROUP_COMPARISON_INFOGRAPHICS: InfographicData[] = [
   {

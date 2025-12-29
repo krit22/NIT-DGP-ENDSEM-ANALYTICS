@@ -26,14 +26,17 @@ const HeroPage: React.FC = () => {
         <div className="pt-8 z-10 animate-in fade-in zoom-in duration-700 delay-200">
             <Link 
             to="/overall" 
-            className="group relative inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl shadow-2xl shadow-blue-900/20 hover:shadow-blue-600/40 hover:scale-105 hover:-translate-y-1 transition-all duration-300"
+            className="group relative inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-5 md:px-12 md:py-6 rounded-full font-black text-xl md:text-2xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] hover:shadow-[0_20px_50px_rgba(37,99,235,0.5)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ring-4 ring-blue-500/20"
             >
-            <span>Begin Analysis</span>
-            <div className="bg-white/20 rounded-full p-1.5 group-hover:bg-white text-slate-900 transition-colors">
-                <Play className="w-4 h-4 fill-current ml-0.5" />
+            <span className="tracking-tight relative z-10">Begin Analysis</span>
+            <div className="relative z-10 bg-white/20 rounded-full p-2 group-hover:bg-white text-white group-hover:text-blue-600 transition-colors duration-300">
+                <Play className="w-5 h-5 fill-current ml-1" />
             </div>
+            
+            {/* Shine effect overlay */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
             </Link>
-            <p className="mt-4 text-sm text-slate-400 font-medium">Chapter 1: The Overall Picture</p>
+            <p className="mt-6 text-sm text-slate-400 font-medium">Chapter 1: The Overall Picture</p>
         </div>
 
         <div className="absolute bottom-10 animate-bounce text-slate-300">
