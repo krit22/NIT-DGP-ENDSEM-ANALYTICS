@@ -46,8 +46,8 @@ const InfographicCard: React.FC<Props> = ({ data, fullWidth = false }) => {
           {/* CTA Overlay - Always visible on mobile to encourage interaction */}
           <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-10">
             <button className="bg-white/90 backdrop-blur-sm text-slate-800 text-xs md:text-sm font-bold px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-slate-200 flex items-center gap-2 hover:bg-blue-50 transition-colors group-hover:scale-105 active:scale-95">
-                <Search className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-600" />
-                <span>Tap to Zoom</span>
+                <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-600" />
+                <span>Tap to Expand</span>
             </button>
           </div>
         </div>

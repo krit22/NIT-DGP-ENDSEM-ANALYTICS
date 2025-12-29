@@ -43,6 +43,16 @@ export const OVERALL_INFOGRAPHICS: InfographicData[] = [
   },
 ];
 
+export const GROUP_COMPARISON_INFOGRAPHICS: InfographicData[] = [
+  {
+    id: 'gc-1',
+    title: 'SGPA Distribution: Group 1 vs Group 2',
+    imageUrl: 'https://github.com/krit22/Resources-for-analysis-website/blob/main/images/general/Code_Generated_Image%20(1).png?raw=true',
+    description: 'Group 2: Higher Median. Group 1: More Compact.',
+    tags: ['Comparison', 'Box Plot', 'Variance']
+  }
+];
+
 export const GROUP_ONE_INFOGRAPHICS: InfographicData[] = [
   {
     id: 'g1-1',

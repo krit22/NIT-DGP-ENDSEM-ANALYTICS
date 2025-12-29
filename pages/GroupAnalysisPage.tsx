@@ -1,5 +1,5 @@
 import React from 'react';
-import { GROUP_ONE_INFOGRAPHICS, GROUP_TWO_INFOGRAPHICS } from '../constants';
+import { GROUP_ONE_INFOGRAPHICS, GROUP_TWO_INFOGRAPHICS, GROUP_COMPARISON_INFOGRAPHICS } from '../constants';
 import InfographicCard from '../components/InfographicCard';
 
 const GroupAnalysisPage: React.FC = () => {
@@ -10,6 +10,19 @@ const GroupAnalysisPage: React.FC = () => {
         <p className="text-xl text-slate-500">
           Evaluating performance differentials between the two primary sub-groups.
         </p>
+      </div>
+
+      {/* Direct Comparison Section */}
+      <div className="space-y-8">
+        <div className="flex items-center gap-4 mb-4 px-2">
+            <h3 className="text-2xl font-bold text-slate-800">Direct Comparison</h3>
+            <div className="h-px bg-slate-200 flex-1"></div>
+        </div>
+        <div className="grid grid-cols-1 gap-12">
+            {GROUP_COMPARISON_INFOGRAPHICS.map((item) => (
+                <InfographicCard key={item.id} data={item} fullWidth />
+            ))}
+        </div>
       </div>
 
       <div className="grid xl:grid-cols-2 gap-12">
