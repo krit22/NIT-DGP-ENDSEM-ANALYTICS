@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import StoryFooter from '../components/StoryFooter';
 import ToughestSubjects from '../components/ToughestSubjects';
 import AvgSgpaChart from '../components/dashboard/AvgSgpaChart';
@@ -36,11 +38,24 @@ const OverallAnalysisPage: React.FC = () => {
       {/* Section: Toughest Subjects */}
       <ToughestSubjects />
 
-      {/* Narrative Bridge */}
-      <div className="max-w-2xl mx-auto text-center mt-16 md:mt-24 px-6 py-8 bg-slate-50 rounded-3xl border border-slate-100">
-        <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed">
-            "Batch performance is strong. But how do the <span className="text-blue-600 font-bold">Groups</span> compare?"
-        </p>
+      {/* Narrative Bridge & CTA */}
+      <div className="max-w-3xl mx-auto text-center mt-16 md:mt-24 px-6 py-12 bg-gradient-to-b from-slate-50 to-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none group-hover:bg-blue-200/50 transition-colors duration-500" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-100/50 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none" />
+
+        <div className="relative z-10 space-y-8">
+            <p className="text-xl md:text-3xl text-slate-700 font-bold leading-relaxed">
+                "Batch performance is strong. <br className="hidden md:block"/>But how do the <span className="text-blue-600 font-black">Groups</span> compare?"
+            </p>
+            
+            <Link 
+                to="/groups"
+                className="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-black text-lg shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:shadow-blue-600/30 hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300"
+            >
+                <span>Analyze Groups</span>
+                <ArrowRight className="w-5 h-5" />
+            </Link>
+        </div>
       </div>
 
       <StoryFooter 
