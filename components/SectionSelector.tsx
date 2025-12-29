@@ -3,7 +3,7 @@ import { Section } from '../types';
 import { SECTIONS_GROUP_1, SECTIONS_GROUP_2 } from '../constants';
 import { useNavigate, useParams } from 'react-router-dom';
 
-const SectionButton: React.FC<{
+const SectionCard: React.FC<{
   sec: Section;
   isActive: boolean;
   onClick: () => void;
@@ -11,13 +11,14 @@ const SectionButton: React.FC<{
   <button
     onClick={onClick}
     className={`
-        w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-sm md:text-lg transition-all
+        relative w-full aspect-square rounded-2xl flex flex-col items-center justify-center font-black text-2xl md:text-3xl transition-all duration-300
         ${isActive 
-          ? 'bg-blue-600 text-white shadow-lg scale-110' 
-          : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'}
+          ? 'bg-blue-600 text-white shadow-xl shadow-blue-500/30 scale-105 ring-4 ring-blue-100' 
+          : 'bg-white text-slate-300 hover:text-slate-600 hover:bg-slate-50 border-2 border-slate-100 hover:border-slate-300'}
       `}
   >
     {sec}
+    {isActive && <span className="absolute bottom-2 text-[10px] font-bold uppercase tracking-widest opacity-80">Viewing</span>}
   </button>
 );
 
@@ -28,14 +29,16 @@ const SectionSelector: React.FC = () => {
   const isSecActive = (sec: Section) => sec === sectionId;
 
   return (
-    <div className="flex flex-col items-center gap-6 py-6 px-4 bg-slate-50 border-y border-slate-200 mb-8">
-      <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wider">Select Section</h3>
-      <div className="flex gap-8 md:gap-16">
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-xs font-medium text-slate-500">Group 1</span>
-          <div className="flex gap-2 md:gap-4">
+    <div className="bg-white rounded-[2rem] p-6 md:p-10 shadow-sm border border-slate-100 mb-12">
+      <h3 className="text-center text-lg font-bold text-slate-800 mb-8">Change Section</h3>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+        {/* Group 1 */}
+        <div className="space-y-4">
+          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest text-center">Group 1</h4>
+          <div className="grid grid-cols-4 gap-3 md:gap-4">
             {SECTIONS_GROUP_1.map((sec) => (
-              <SectionButton
+              <SectionCard
                 key={sec}
                 sec={sec}
                 isActive={isSecActive(sec)}
@@ -44,14 +47,13 @@ const SectionSelector: React.FC = () => {
             ))}
           </div>
         </div>
-        
-        <div className="w-px bg-slate-300 h-12 self-end mb-2"></div>
 
-        <div className="flex flex-col items-center gap-3">
-          <span className="text-xs font-medium text-slate-500">Group 2</span>
-          <div className="flex gap-2 md:gap-4">
+        {/* Group 2 */}
+        <div className="space-y-4">
+          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest text-center">Group 2</h4>
+          <div className="grid grid-cols-4 gap-3 md:gap-4">
             {SECTIONS_GROUP_2.map((sec) => (
-              <SectionButton
+              <SectionCard
                 key={sec}
                 sec={sec}
                 isActive={isSecActive(sec)}

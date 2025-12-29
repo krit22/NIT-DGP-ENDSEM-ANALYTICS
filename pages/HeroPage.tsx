@@ -1,109 +1,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Users, GraduationCap, AlertCircle } from 'lucide-react';
-import { SECTIONS_GROUP_1, SECTIONS_GROUP_2 } from '../constants';
+import { Play, Star, ChevronDown } from 'lucide-react';
 import HallOfFame from '../components/HallOfFame';
 
 const HeroPage: React.FC = () => {
   return (
-    <div className="space-y-12">
-      {/* Hero Header */}
-      <div className="text-center space-y-4 py-10 md:py-20">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">
-          Student Performance <span className="text-blue-600">Analytics</span>
-        </h1>
-        <p className="max-w-2xl mx-auto text-xl text-slate-500">
-          A comprehensive breakdown of GPA distribution across 8 sections. 
-          Analyzing trends, outliers, and group-wise comparisons to drive academic excellence.
-        </p>
-        <div className="flex justify-center gap-4 pt-6">
-          <Link to="/overall" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200 flex items-center gap-2">
-            View Overall Analysis <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link to="/groups" className="px-6 py-3 bg-white text-slate-700 border border-slate-200 font-semibold rounded-lg hover:bg-slate-50 transition flex items-center gap-2">
-            Compare Groups
-          </Link>
+    <div className="pb-20">
+      {/* Cinematic Intro */}
+      <div className="min-h-[80vh] flex flex-col justify-center items-center text-center space-y-8 relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none" />
+        
+        <div className="space-y-4 z-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <span className="px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs md:text-sm font-bold tracking-widest uppercase border border-blue-100">
+                Semester 1 Recap
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 tracking-tight leading-[0.9]">
+            The Data <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Story.</span>
+            </h1>
+            <p className="max-w-xl mx-auto text-lg md:text-2xl text-slate-500 leading-relaxed font-medium pt-4">
+            A journey through the grades, the outliers, and the champions of the batch.
+            </p>
+        </div>
+
+        <div className="pt-8 z-10 animate-in fade-in zoom-in duration-700 delay-200">
+            <Link 
+            to="/overall" 
+            className="group relative inline-flex items-center gap-4 bg-slate-900 text-white px-8 py-4 md:px-10 md:py-5 rounded-full font-bold text-lg md:text-xl shadow-2xl shadow-blue-900/20 hover:shadow-blue-600/40 hover:scale-105 hover:-translate-y-1 transition-all duration-300"
+            >
+            <span>Begin Analysis</span>
+            <div className="bg-white/20 rounded-full p-1.5 group-hover:bg-white text-slate-900 transition-colors">
+                <Play className="w-4 h-4 fill-current ml-0.5" />
+            </div>
+            </Link>
+            <p className="mt-4 text-sm text-slate-400 font-medium">Chapter 1: The Overall Picture</p>
+        </div>
+
+        <div className="absolute bottom-10 animate-bounce text-slate-300">
+            <ChevronDown className="w-8 h-8" />
         </div>
       </div>
 
-      {/* Hall Of Fame Section */}
-      <HallOfFame />
-
-      {/* Quick Stats Dashboard */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
-          <div className="p-3 bg-green-100 text-green-600 rounded-lg">
-            <Users className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500">Total Students</p>
-            <h3 className="text-2xl font-bold text-slate-800">884</h3>
-            <p className="text-xs text-green-600 font-medium">Active Enrollment</p>
-          </div>
+      {/* Hall Of Fame Teaser */}
+      <div className="max-w-5xl mx-auto px-4">
+        <div className="flex items-center gap-4 mb-8">
+            <div className="p-3 bg-amber-100 rounded-xl text-amber-600">
+                <Star className="w-6 h-6 fill-current" />
+            </div>
+            <div>
+                <h3 className="text-2xl font-bold text-slate-900">The Hall of Fame</h3>
+                <p className="text-slate-500">Highlighting exceptional performances</p>
+            </div>
         </div>
-
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
-          <div className="p-3 bg-blue-100 text-blue-600 rounded-lg">
-            <TrendingUp className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500">Batch Avg SGPA</p>
-            <h3 className="text-2xl font-bold text-slate-800">8.16</h3>
-            <p className="text-xs text-slate-400">Across 8 sections</p>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
-          <div className="p-3 bg-purple-100 text-purple-600 rounded-lg">
-            <GraduationCap className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500">Top Performer Score</p>
-            <h3 className="text-2xl font-bold text-slate-800">9.78</h3>
-            <p className="text-xs text-purple-600">Sections B, E, and G</p>
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-start gap-4">
-          <div className="p-3 bg-amber-100 text-amber-600 rounded-lg">
-            <AlertCircle className="w-6 h-6" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-slate-500">Needs Attention</p>
-            <h3 className="text-2xl font-bold text-slate-800">Section D</h3>
-            <p className="text-xs text-amber-600">Lowest Avg SGPA: 7.90</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Structure Preview */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-slate-100 p-8 rounded-2xl border border-slate-200">
-          <h3 className="text-lg font-bold text-slate-800 mb-4">Group 1 Structure</h3>
-          <div className="flex gap-4">
-            {SECTIONS_GROUP_1.map(sec => (
-              <div key={sec} className="w-12 h-12 rounded-full bg-white flex items-center justify-center font-bold text-slate-600 shadow-sm">
-                {sec}
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 text-slate-600 text-sm">
-            Comprises the first four sections. Historically shows consistent performance with lower variance.
-          </p>
-        </div>
-        <div className="bg-slate-100 p-8 rounded-2xl border border-slate-200">
-          <h3 className="text-lg font-bold text-slate-800 mb-4">Group 2 Structure</h3>
-          <div className="flex gap-4">
-            {SECTIONS_GROUP_2.map(sec => (
-              <div key={sec} className="w-12 h-12 rounded-full bg-white flex items-center justify-center font-bold text-slate-600 shadow-sm">
-                {sec}
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 text-slate-600 text-sm">
-            Comprises the latter four sections. Contains both the highest individual outliers and widest spread in scores.
-          </p>
-        </div>
+        <HallOfFame />
       </div>
     </div>
   );
