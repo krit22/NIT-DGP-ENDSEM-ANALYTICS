@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Linkedin, Instagram, Heart, Code2 } from 'lucide-react';
+import { Linkedin, Instagram, Heart, Code2, Play } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -26,8 +26,14 @@ const Footer: React.FC = () => {
                 </a>
             </div>
             
+            {/* Begin Analytics Button */}
+            <Link to="/overall" className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-sm md:text-base shadow-xl shadow-blue-600/20 hover:bg-blue-700 hover:shadow-blue-700/30 transition-all transform hover:-translate-y-1 active:scale-95">
+                <span>Begin Analytics</span>
+                <Play className="w-5 h-5 fill-current" />
+            </Link>
+
             {/* Developer Button */}
-             <Link to="/about" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-sm md:text-base shadow-xl shadow-slate-900/10 hover:bg-blue-600 hover:shadow-blue-600/20 transition-all transform hover:-translate-y-1 active:scale-95">
+             <Link to="/about" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-sm md:text-base shadow-xl shadow-slate-900/10 hover:bg-slate-800 hover:shadow-slate-900/20 transition-all transform hover:-translate-y-1 active:scale-95">
                 <Code2 className="w-5 h-5" />
                 <span>Meet the Builder</span>
             </Link>
