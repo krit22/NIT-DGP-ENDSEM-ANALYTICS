@@ -23,14 +23,33 @@ export interface InfographicData {
   dateGenerated?: string;
 }
 
+export interface Student {
+  NAME: string;
+  Program: string;
+  SGPA: number;
+}
+
+export interface SectionSummary {
+  average_sgpa: number;
+  strength: number;
+  tag: string;
+}
+
+export interface RadarScores {
+  Elite_Index: number;
+  Stability_Index: number;
+  Uniformity: number;
+  Resilience: number;
+}
+
 export interface SectionData {
-  section: Section;
-  stats: {
-    studentCount: number;
-    avgGpa: number;
-    highestGpa: number;
-  };
-  infographics: InfographicData[];
+  summary: SectionSummary;
+  hall_of_fame: Student[];
+  branch_battle: Record<string, number>;
+  local_hurdles: Record<string, number>;
+  radar_scores: RadarScores;
+  grade_density: Record<string, number>;
+  infographics?: InfographicData[]; // Optional/Deprecated
 }
 
 export interface GroupData {
