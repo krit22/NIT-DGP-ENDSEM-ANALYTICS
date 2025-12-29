@@ -2,6 +2,7 @@ import React from 'react';
 import { OVERALL_INFOGRAPHICS } from '../constants';
 import InfographicCard from '../components/InfographicCard';
 import StoryFooter from '../components/StoryFooter';
+import ToughestSubjects from '../components/ToughestSubjects';
 
 const OverallAnalysisPage: React.FC = () => {
   return (
@@ -15,11 +16,14 @@ const OverallAnalysisPage: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-12 md:gap-24">
+      <div className="grid grid-cols-1 gap-12 md:gap-24 mb-16">
         {OVERALL_INFOGRAPHICS.map((item, index) => (
           <InfographicCard key={item.id} data={item} fullWidth={index === 0} />
         ))}
       </div>
+
+      {/* New Section: Toughest Subjects */}
+      <ToughestSubjects />
 
       {/* Narrative Bridge */}
       <div className="max-w-2xl mx-auto text-center mt-16 md:mt-24 px-6 py-8 bg-slate-50 rounded-3xl border border-slate-100">
