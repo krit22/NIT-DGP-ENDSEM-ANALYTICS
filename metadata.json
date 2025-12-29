@@ -1,0 +1,5 @@
+{
+  "name": "Academic Analytics Dashboard",
+  "description": "A comprehensive dashboard for analyzing student GPA performance across sections and groups using infographic data.",
+  "requestFramePermissions": []
+}
