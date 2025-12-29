@@ -5,6 +5,14 @@ interface Props {
   data: Record<string, number>;
 }
 
+interface GradeDataItem {
+  key: string;
+  value: number;
+  color: string;
+  label: string;
+  order: number;
+}
+
 const GradePieChart: React.FC<Props> = ({ data }) => {
   // Define color mapping and sort order
   const rangeConfig: Record<string, { color: string; label: string; order: number }> = {
@@ -16,13 +24,13 @@ const GradePieChart: React.FC<Props> = ({ data }) => {
   };
 
   // Convert map to sorted array
-  const sortedData = Object.entries(data)
+  const sortedData: GradeDataItem[] = Object.entries(data)
     .map(([key, value]) => {
       const config = rangeConfig[key];
       // Explicitly construct object to avoid type inference issues with spread of undefined
       return {
         key,
-        value,
+        value: Number(value),
         color: config?.color ?? '#cbd5e1',
         label: config?.label ?? key,
         order: config?.order ?? -1

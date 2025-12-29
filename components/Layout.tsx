@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { BarChart3, PieChart, LayoutGrid, Menu, X, Home } from 'lucide-react';
+import Footer from './Footer';
 
 interface Props {
   children: React.ReactNode;
@@ -29,7 +30,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900">
+    <div className="min-h-screen bg-white font-sans text-slate-900 flex flex-col">
       {/* Navigation Bar - Minimalist */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -99,9 +100,12 @@ const Layout: React.FC<Props> = ({ children }) => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
         {children}
       </main>
+
+      {/* Global Footer */}
+      <Footer />
 
     </div>
   );
